@@ -1,7 +1,6 @@
 package com.estsoft.springproject.blog.controller;
 
 import com.estsoft.springproject.blog.domain.Comment;
-import com.estsoft.springproject.blog.domain.dto.ArticleResponse;
 import com.estsoft.springproject.blog.domain.dto.CommentRequestDTO;
 import com.estsoft.springproject.blog.domain.dto.CommentResponseDTO;
 import com.estsoft.springproject.blog.service.CommentService;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 public class CommentArticleController {
@@ -26,7 +24,7 @@ public class CommentArticleController {
     public ResponseEntity<CommentResponseDTO> saveCommentByArticleId(@PathVariable Long articleId, @RequestBody CommentRequestDTO request) {
 
         Comment comment = commentService.saveComment(articleId, request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new CommentResponseDTO());
+        return ResponseEntity.status(HttpStatus.CREATED).body(new CommentResponseDTO(comment));
     }
 
     // 댓글 정보조회 REST API
