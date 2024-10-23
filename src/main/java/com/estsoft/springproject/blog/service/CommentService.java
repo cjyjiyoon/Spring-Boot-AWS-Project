@@ -8,7 +8,6 @@ import com.estsoft.springproject.blog.repository.CommentRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class CommentService {
@@ -48,11 +47,4 @@ public class CommentService {
         commentRepository.deleteById(commentId);
         // delete from comment where id = ${commentid}
     }
-
-    // 게시글과 댓글 전부 조회
-//    public List<Comment> findAllComment(Long articleId){
-//
-//        return commentRepository.findById(articleId);
-//
-//    }
 }
