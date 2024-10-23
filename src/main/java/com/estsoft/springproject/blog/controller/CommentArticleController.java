@@ -48,10 +48,4 @@ public class CommentArticleController {
         return ResponseEntity.ok().build();
     }
 
-    //  게시글과 댓글 정보를 한번에 조회하는 REST API
-//    @GetMapping("/api/articles/{articleId}/comments")
-//    public ResponseEntity<ArticleResponse> viewAll(@PathVariable Long articleId){
-//
-//    }
-
 }
