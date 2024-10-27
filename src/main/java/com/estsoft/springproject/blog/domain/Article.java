@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -59,6 +58,14 @@ public class Article {
 //        if(!content.isBlank()) {this.content = content;}
         this.title = title;
         this.content = content;
+    }
+
+    public Article(ArticleResponse dto){
+        this.id = dto.getId();
+        this.title = dto.getTitle();
+        this.content = dto.getContent();
+        this.createdAt = dto.getCreatedAt();
+        this.updatedAt = dto.getUpdatedAt();
     }
 
 
