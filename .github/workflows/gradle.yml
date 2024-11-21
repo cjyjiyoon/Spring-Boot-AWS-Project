@@ -28,6 +28,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Build with Gradle (Skip Tests)
+      run: ./gradlew build -x test 
+
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
